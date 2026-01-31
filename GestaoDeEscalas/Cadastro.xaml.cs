@@ -6,13 +6,16 @@ namespace GestaoDeEscalas
 {
     partial class Cadastro
     {
-        public Cadastro() 
+        public Cadastro()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
-        async void OnCadastrarClicked(object sender, EventArgs e) 
+
+        async void OnVoltarInicialCliked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("Cadastro");
+            await Shell.Current.GoToAsync("///MainPage");
         }
+
     }
+    
 }

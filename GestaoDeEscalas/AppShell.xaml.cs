@@ -7,6 +7,9 @@
             InitializeComponent();
            
             Routing.RegisterRoute(nameof(Cadastro), typeof(Cadastro));
+            Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+
+           
         }
     }
 }

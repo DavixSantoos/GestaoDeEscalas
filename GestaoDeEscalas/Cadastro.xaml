@@ -3,44 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestaoDeEscalas.Cadastro" 
              Background="#1C1C1E">
+    
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" >
 
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="Cadastrar-se" 
+        
+            <Label Text="Cadastro" 
                FontSize="40"
                FontAttributes="Italic"
                TextColor="#FFFFFF"/>
-        <Grid RowDefinitions="*,*,*,*,*,*,*" VerticalOptions="Center" WidthRequest="400">
+       
+            <Grid RowDefinitions="*,*,*,*,*,*,*" VerticalOptions="Center" WidthRequest="400">
 
-            <Label Grid.Row="0" Text="Nome completo" TextColor="#D3D3D3"/>
-            <Entry Grid.Row="1" Placeholder="Nome"/>
-            
-            <Label Grid.Row="2" Text="E-mail"/>
-            <Entry Grid.Row="3" Margin="0,0,0,10" Placeholder="E-mail" TextColor="#D3D3D3"/>
+                <Label Grid.Row="0" Text="Nome completo" TextColor="#D3D3D3"/>
+                <Entry Grid.Row="1" Placeholder="Nome"/>
 
-            <Label Grid.Row="4" Margin="0,0,0,10" Text="Senha" TextColor="#D3D3D3"/>
-            <Entry Grid.Row="5" Placeholder="*******" Margin="0,0,0,40"/>
+                <Label Grid.Row="2" Text="E-mail" TextColor="White"/>
+                <Entry Grid.Row="3" Margin="0,0,0,10" Placeholder="E-mail" TextColor="#D3D3D3"/>
 
-             <Picker x:Name="FromPicker" Title="Naciocionalidade" Grid.Column="40" Margin="0,20,0,0">    
-                 
-                 
-                 
-             </Picker>
+                <Label Grid.Row="4" Margin="0,0,0,10" Text="Senha" TextColor="#D3D3D3"/>
+                <Entry Grid.Row="5" Placeholder="*******" Margin="0,0,0,40" IsPassword="True"/>
 
-                <Button Grid.Row="6" Margin="0,0,0,20" Text="Cadastrar" Background="#512BD4" TextColor="White"/>
-        </Grid>
+                <Button Grid.Row="6" Margin="0,0,0,40" Text="Cadastrar" TextColor="White" Clicked="OnVoltarInicialCliked"/>
 
+
+            </Grid>
+        
     </VerticalStackLayout>
 
 
-
-
-
-
-
-
-
-
-
 </ContentPage>
+
+
+
+
+
+
+
+
+
     
   

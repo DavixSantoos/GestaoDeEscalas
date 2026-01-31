@@ -8,10 +8,18 @@
         {
             InitializeComponent();
         }
-        async void OnCadastrarClicked(object sender, EventArgs e) 
+        async void OnCadastrarClicked(object? sender, EventArgs e) 
         {
             await Shell.Current.GoToAsync("Cadastro");
+           
         }
+
+        async void OnVoltarInicialCliked(object? sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("Mainpage");
+        }
+
     }
-}
+   
+    }
 
