@@ -15,7 +15,6 @@ namespace GestaoDeEscalas
         {
             await Shell.Current.GoToAsync("///MainPage");
         }
-
+        
     }
-    
 }
