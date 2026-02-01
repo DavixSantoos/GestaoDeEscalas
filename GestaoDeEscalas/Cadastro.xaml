@@ -30,11 +30,22 @@
                 <Entry Grid.Row="3" Margin="0,0,0,10" Placeholder="E-mail" TextColor="#D3D3D3"/>
 
                 <Label Grid.Row="4" Margin="0,0,0,10" Text="Senha" TextColor="#D3D3D3"/>
-                <Entry Grid.Row="5" Placeholder="*******" Margin="0,0,0,40" IsPassword="True"/>
 
+               
+                <Entry x:Name="EntrySenha" Grid.Row="5" Placeholder="*******" Margin="0,0,0,40" IsPassword="True"/>
+
+                <ImageButton x:Name="BtnOlho"
+             Grid.Row="5" 
+             Source="olhofechado.png"
+             HeightRequest="25"
+             WidthRequest="25"
+             Margin="0,0,15,40" 
+             VerticalOptions="Center"
+             HorizontalOptions="End" 
+             Clicked="OnShowPasswordClicked"
+             Background="Transparent"/>
 
                 <Button Grid.Row="6" Margin="0,0,0,40" Text="Cadastrar" TextColor="White" Clicked="OnVoltarInicialCliked"/>
-
 
 
             </Grid>
