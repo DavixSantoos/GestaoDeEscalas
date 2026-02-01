@@ -36,8 +36,8 @@
                     <Entry Grid.Row="3" Placeholder="********" Text="*****" Margin="0,0,0,40" IsPassword="True" TextColor="White"/>
               
                         <!-- Botao para Login e cadastro -->
-                    <Button Grid.Row="4" Text="Faça Seu Login" BackgroundColor="#512BD4" TextColor="White"  Margin="0,0,0,40" Clicked="OnTelaInicialCliked"/>
-
+                    <Button Grid.Row="4" Text="Faça Seu Login" BackgroundColor="#512BD4" TextColor="White"  Margin="0,0,0,40" Clicked="OnTelaInicialCliked" />
+                    
                     <Button Grid.Row="5" Text="Crie uma conta" BackgroundColor="Transparent" TextColor="#512BD4" Margin="0,0,0,20" Clicked="OnCadastrarClicked"/>
                 </Grid>
             </Border>
@@ -46,3 +46,4 @@
     </ScrollView>
 
 </ContentPage>
+
