@@ -19,6 +19,10 @@
             await Shell.Current.GoToAsync("Mainpage");
         }
 
+        async void OnTelaInicialCliked(object? sender, EventArgs e) 
+        {
+            await Shell.Current.GoToAsync("TelaInicial");
+        } 
     }
    
     }
