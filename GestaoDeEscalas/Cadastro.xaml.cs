@@ -21,7 +21,7 @@ namespace GestaoDeEscalas
             // Inverte o estado (se for true vira false, se for false vira true)
             EntrySenha.IsPassword = !EntrySenha.IsPassword;
 
-           
+      
         }
 
     }
