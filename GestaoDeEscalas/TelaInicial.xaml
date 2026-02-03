@@ -4,17 +4,20 @@
              x:Class="GestaoDeEscalas.TelaInicial"
              Background="#1C1C1E">
 
-    <Grid RowDefinitions="60,*">
+    <Grid RowDefinitions="60,60,*">
         <Grid Background="#2C2C2E" Padding="15" Grid.Row="0" ColumnDefinitions="Auto,*">
-            <Image Source="menu.png" WidthRequest="24" VerticalOptions="Start" BackgroundColor="Transparent"/>
-
+            <Image Source="menu.png" WidthRequest="50" VerticalOptions="Center" BackgroundColor="Transparent" />
             <Label Text="Gestão de Trabalho" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
-
         </Grid>
-        <ScrollView Grid.Row="1">
+        
+        <Grid RowDefinitions="Auto" Grid.Row="1" Padding="15" ColumnDefinitions="Auto,*">
+            <ImageButton x:Name="BtnPerfil" Source="perfil.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start" Background="Transparent" Clicked="BtnPerfil_Clicked"/>
+        </Grid>
+        
+        <ScrollView Grid.Row="2">
 
             <VerticalStackLayout Padding="20" >
-                <Label Text="Informacoes" TextColor="White" FontAttributes="Italic"/>
+                
 
 
 

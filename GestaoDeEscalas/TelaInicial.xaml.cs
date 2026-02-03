@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GestaoDeEscalas
 {
@@ -9,6 +10,11 @@ namespace GestaoDeEscalas
         public TelaInicial()
         {
             InitializeComponent();
+        }
+
+        async void BtnPerfil_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("Perfil");
         }
     }
 }
