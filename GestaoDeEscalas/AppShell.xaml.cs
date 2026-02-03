@@ -12,6 +12,7 @@
            
             Routing.RegisterRoute(nameof(TelaInicial),typeof(TelaInicial));
 
+            Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));
 
         }
     }
