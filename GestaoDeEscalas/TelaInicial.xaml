@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestaoDeEscalas.TelaInicial"
              Background="#1C1C1E">
-
-    <Grid RowDefinitions="60,60,*">
+    <Grid>
+        <Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
+        <Grid RowDefinitions="60,60,*">
         <Grid Background="#2C2C2E" Padding="15" Grid.Row="0" ColumnDefinitions="Auto,*">
             <Image Source="menu.png" WidthRequest="50" VerticalOptions="Center" BackgroundColor="Transparent" />
             <Label Text="Gestão de Trabalho" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
@@ -20,6 +21,7 @@
                 
 
 
+                
 
 
 
@@ -34,6 +36,6 @@
 
         </ScrollView>
     </Grid>
-
+    </Grid>
 
 </ContentPage>
