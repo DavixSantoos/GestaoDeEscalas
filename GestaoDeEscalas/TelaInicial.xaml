@@ -6,36 +6,137 @@
     <Grid>
         <Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
         <Grid RowDefinitions="60,60,*">
-        <Grid Background="#2C2C2E" Padding="15" Grid.Row="0" ColumnDefinitions="Auto,*">
-            <Image Source="menu.png" WidthRequest="50" VerticalOptions="Center" BackgroundColor="Transparent" />
-            <Label Text="Gestão de Trabalho" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+            <Grid Background="#2C2C2E" Padding="10" Grid.Row="0" ColumnDefinitions="Auto,*">
+                <ImageButton x:Name="BtnPerfil" Source="perfil.png" WidthRequest="50" VerticalOptions="Center" Background="Transparent" Clicked="BtnPerfil_Clicked"/>
+                <Label Text="Gestão de Trabalho" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+            </Grid>
+
+            <Grid RowDefinitions="Auto" Grid.Row="1" Padding="15,0,15,10" ColumnDefinitions="Auto,*">
+            </Grid>
+
+            <ScrollView Grid.Row="2">
+                <VerticalStackLayout Padding="20" Spacing="25">
+
+                    <StackLayout Spacing="10">
+                        <Border StrokeShape="RoundRectangle 25" StrokeThickness="0" Background="#2C2C2E" Padding="20">
+                            <Border.Shadow>
+                                <Shadow Radius="10" Opacity="0.5" Offset="0,5" />
+                            </Border.Shadow>
+                            
+                            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,auto">
+                                
+                                <StackLayout Grid.Row="0" Grid.Column="0" Spacing="2">
+                                    
+                                    <Label Text="Sua Proxima Escala" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="Segunda-feira, 10 de Julho" TextColor="#B0B0B0" FontSize="14"/>
+                                </StackLayout>
+
+                                <Border Grid.Row="0" Grid.Column="1" StrokeShape="RoundRectangle 10" Background="#2E7D32" Padding="12,4" VerticalOptions="Start">
+                                    <Label Text="Confirmada" TextColor="White" FontSize="11" FontAttributes="Bold" VerticalOptions="Center" Margin="0,15,0,15"/>
+                                </Border>
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="08:00 - 19:00" TextColor="White" FontSize="42" FontAttributes="Bold" VerticalOptions="Center"/>
+
+                                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Spacing="5">
+                                    <Label Text="📍" TextColor="#A0A0A0" VerticalOptions="Center"/>
+                                    <Label Text="UTI Geral - Ala B" TextColor="#D0D0D0" VerticalOptions="Center" FontSize="15"/> 
+                                </StackLayout>       
+                            </Grid>
+                        </Border>
+                    </StackLayout>
+                    <StackLayout Spacing="15">
+                        <Label Text="Acesso Rápido" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="110, 110" ColumnSpacing="15" RowSpacing="15">
+                            <Button Grid.Row="0" Grid.Column="0" 
+                                    Text="Registrar Ponto" 
+                                    BackgroundColor="#6200EE" 
+                                    TextColor="White"
+                                    CornerRadius="18"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    ImageSource="icon_relogio.png" 
+                                    ContentLayout="Top, 10"
+                                    Padding="10"/>
+
+                            <Button Grid.Row="0" Grid.Column="1" 
+                                    Text="Minha Escala" 
+                                    BackgroundColor="#2C2C2E" 
+                                    TextColor="White"
+                                    CornerRadius="18"
+                                    FontSize="14"
+                                    ImageSource="icon_calendario.png"
+                                    ContentLayout="Top, 10"
+                                    Padding="10"/>
+
+                            <Button Grid.Row="1" Grid.Column="0" 
+                                    Text="Trocas" 
+                                    BackgroundColor="#2C2C2E" 
+                                    TextColor="White"
+                                    CornerRadius="18"
+                                    FontSize="14"
+                                    ImageSource="icon_trocas.png"
+                                    ContentLayout="Top, 10"
+                                    Padding="10"/>
+
+                            <Button Grid.Row="1" Grid.Column="1" 
+                                    Text="Financeiro" 
+                                    BackgroundColor="#2C2C2E" 
+                                    TextColor="White"
+                                    CornerRadius="18"
+                                    FontSize="14"
+                                    ImageSource="icon_financeiro.png"
+                                    ContentLayout="Top, 10"
+                                    Padding="10"/>
+                        </Grid>
+                    </StackLayout>
+
+                    <Border StrokeShape="RoundRectangle 20"
+                            StrokeThickness="0"
+                            BackgroundColor="#2C2C2E" 
+                            Padding="20"
+                            Margin="0,0,0,30">
+                        <StackLayout Spacing="10">
+                            <Label Text="Banco de Horas (Fev)" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Label Text="120h / 180h" TextColor="#A0A0A0" FontSize="13"/>
+                                <Label Grid.Column="1" Text="66%" TextColor="#BB86FC" FontAttributes="Bold" FontSize="16"/>
+                            </Grid>
+
+                            <ProgressBar Progress="0.66" ProgressColor="#6200EE" ScaleY="3" BackgroundColor="#404040"/>
+                        </StackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
         </Grid>
-        
-        <Grid RowDefinitions="Auto" Grid.Row="1" Padding="15" ColumnDefinitions="Auto,*">
-            <ImageButton x:Name="BtnPerfil" Source="perfil.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start" Background="Transparent" Clicked="BtnPerfil_Clicked"/>
-        </Grid>
-        
-        <ScrollView Grid.Row="2">
 
-            <VerticalStackLayout Padding="20" >
-                
+        <BoxView x:Name="SombraMenu" Color="Black" Opacity="0" InputTransparent="True">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnFecharMenuClicked"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
 
+        <Border x:Name="MenuGaveta" TranslationX="-320" WidthRequest="300" HorizontalOptions="Start" VerticalOptions="Fill" Background="#2C2C2E" StrokeThickness="0" StrokeShape="RoundRectangle 0,20,20,0">
+            <Grid RowDefinitions="Auto,*">
+                <StackLayout Grid.Row="0" Background="#6200EE" Padding="25,50,20,30">
+                    <Label Text="Navegação" TextColor="White" FontSize="24" FontAttributes="Bold"/>
+                </StackLayout>
 
-                
-
-
-
-
-
-
-
-
-            </VerticalStackLayout>
+                <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="15">
+                    <Button Text="Início" Background="Transparent" TextColor="White" HorizontalOptions="Start" FontSize="16" ImageSource="icon_home.png"/>
+                    <Button Text="Minhas Escalas" Background="Transparent" TextColor="White" HorizontalOptions="Start" FontSize="16" ImageSource="icon_calendario.png"/>
+                    <Button Text="Solicitar Troca" Background="Transparent" TextColor="White" HorizontalOptions="Start" FontSize="16" ImageSource="icon_trocas.png"/>
 
 
+                    <BoxView HeightRequest="1" Color="#404040" Margin="0,10"/>
 
-        </ScrollView>
+                    <Button Text="Configurações" Background="Transparent" TextColor="White" HorizontalOptions="Start" FontSize="16" ImageSource="icon_config.png"/>
+
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
     </Grid>
-    </Grid>
-
 </ContentPage>

@@ -24,6 +24,7 @@
             await Shell.Current.GoToAsync("TelaInicial");
         } 
        
+      
         }
     }
    

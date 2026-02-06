@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestaoDeEscalas.Cadastro" 
              Background="#1C1C1E">
-
+    <Grid>
+        <Image Source="planodefundo.png" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
+    
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" >
         <Label Text="Cadastro" 
                FontSize="40"
@@ -33,7 +35,7 @@
             </Grid>
         </Border>
     </VerticalStackLayout>
-
+   </Grid>
 
 </ContentPage>
 

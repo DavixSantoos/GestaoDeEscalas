@@ -14,6 +14,8 @@
 
             Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));
 
+            Routing.RegisterRoute(nameof(Escalas), typeof(Escalas));
+
         }
     }
 }
