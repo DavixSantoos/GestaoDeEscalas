@@ -9,7 +9,7 @@
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" >
         <Label Text="Cadastro" 
                FontSize="40"
-               FontAttributes="Italic"
+               FontAttributes="Bold"
                TextColor="#FFFFFF"/>
         
 <Border Stroke="#2C2C2E" StrokeThickness="2" Background="#2C2C2E" Padding="30" WidthRequest="500">
