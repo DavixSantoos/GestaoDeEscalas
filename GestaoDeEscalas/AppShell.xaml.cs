@@ -16,6 +16,11 @@
 
             Routing.RegisterRoute(nameof(Escalas), typeof(Escalas));
 
+            Routing.RegisterRoute(nameof(RegistrarPonto), typeof(RegistrarPonto));
+            
+            Routing.RegisterRoute(nameof(Financeiro), typeof(Financeiro));
+
+            Routing.RegisterRoute(nameof(Trocas), typeof(Trocas));
         }
     }
 }
