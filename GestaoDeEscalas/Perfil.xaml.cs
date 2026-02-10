@@ -15,6 +15,9 @@ namespace GestaoDeEscalas
         {
             await Shell.Current.GoToAsync("TelaInicial");
         }
-
+        async void OnVoltarTelaLogin(object sender, EventArgs e) 
+        { 
+         await Shell.Current.GoToAsync("///MainPage");
+        }
     }
 }
