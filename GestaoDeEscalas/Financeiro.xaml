@@ -4,6 +4,13 @@
              x:Class="GestaoDeEscalas.Financeiro"
              Background="#1C1C1E">
 
+	<Grid>
+		<Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
+		<Grid RowDefinitions="60,60,*">
+			<Grid BackgroundColor="#2C2C2E" Padding="15,8" Grid.Row="0" ColumnDefinitions="40,*">
+				<ImageButton x:Name="BtnVoltar" Source="botaovoltar.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFit" VerticalOptions="Center"  HorizontalOptions="Start" Padding="0"  BackgroundColor="Transparent" Clicked="OnVoltarTelaInicialCliked"/>
+				<Label Text="Financeiro" TextColor="White" FontSize="18" VerticalOptions="Center" Margin="10,0,0,0"  Grid.Column="1"/> 
+			</Grid>
 
 
 
@@ -11,5 +18,16 @@
 
 
 
+
+		</Grid>
+	</Grid>
 
 </ContentPage>
+
+
+
+
+
+
+
+

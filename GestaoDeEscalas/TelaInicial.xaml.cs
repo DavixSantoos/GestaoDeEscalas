@@ -21,8 +21,18 @@ namespace GestaoDeEscalas
         {
             await Shell.Current.GoToAsync("Escalas");
         }
-    
-        
+        async void BtnRegistrarPonto_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("RegistrarPonto");
+        }
+        async void BtnFinanceiro_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("Financeiro");
+        }
+        async void BtnTrocas_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("Trocas");
+        }
     }
 
 

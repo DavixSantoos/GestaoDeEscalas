@@ -39,7 +39,7 @@
 
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Spacing="5">
                                     <Label Text="📍" TextColor="#A0A0A0" VerticalOptions="Center"/>
-                                    <Label Text="UTI Geral - Ala B" TextColor="#D0D0D0" VerticalOptions="Center" FontSize="15"/> 
+                                    <Label Text="Mercearia" TextColor="#D0D0D0" VerticalOptions="Center" FontSize="15"/> 
                                 </StackLayout>       
                             </Grid>
                         </Border>
@@ -54,10 +54,9 @@
                                     TextColor="White"
                                     CornerRadius="18"
                                     FontSize="14"
-                                    FontAttributes="Bold"
-                                    ImageSource="icon_relogio.png" 
+                                    FontAttributes="Bold" 
                                     ContentLayout="Top, 10"
-                                    Padding="10"/>
+                                    Padding="10" Clicked="BtnRegistrarPonto_Clicked"/>
 
                             <Button Grid.Row="0" Grid.Column="1" 
                                     Text="Minha Escala" 
@@ -65,9 +64,8 @@
                                     TextColor="White"
                                     CornerRadius="18"
                                     FontSize="14"
-                                    ImageSource="icon_calendario.png"
                                     ContentLayout="Top, 10"
-                                    Padding="10"/>
+                                    Padding="10" Clicked="BtnEscalas_Clicked"/>
 
                             <Button Grid.Row="1" Grid.Column="0" 
                                     Text="Trocas" 
@@ -75,9 +73,8 @@
                                     TextColor="White"
                                     CornerRadius="18"
                                     FontSize="14"
-                                    ImageSource="icon_trocas.png"
                                     ContentLayout="Top, 10"
-                                    Padding="10"/>
+                                    Padding="10" Clicked="BtnTrocas_Clicked"/>
 
                             <Button Grid.Row="1" Grid.Column="1" 
                                     Text="Financeiro" 
@@ -85,9 +82,8 @@
                                     TextColor="White"
                                     CornerRadius="18"
                                     FontSize="14"
-                                    ImageSource="icon_financeiro.png"
                                     ContentLayout="Top, 10"
-                                    Padding="10"/>
+                                    Padding="10" Clicked="BtnFinanceiro_Clicked"/>
                         </Grid>
                     </StackLayout>
 
