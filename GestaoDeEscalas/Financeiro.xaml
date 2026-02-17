@@ -2,29 +2,117 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestaoDeEscalas.Financeiro"
-             Background="#1C1C1E">
+             Shell.NavBarIsVisible="False">
 
-	<Grid>
-		<Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
-		<Grid RowDefinitions="60,60,*">
-			<Grid BackgroundColor="#2C2C2E" Padding="15,8" Grid.Row="0" ColumnDefinitions="40,*">
-				<ImageButton x:Name="BtnVoltar" Source="botaovoltar.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFit" VerticalOptions="Center"  HorizontalOptions="Start" Padding="0"  BackgroundColor="Transparent" Clicked="OnVoltarTelaInicialCliked"/>
-				<Label Text="Financeiro" TextColor="White" FontSize="18" VerticalOptions="Center" Margin="10,0,0,0"  Grid.Column="1"/> 
-			</Grid>
+    <Grid>
+        <Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
 
+        <Grid RowDefinitions="60, *">
 
+            <Grid Grid.Row="0" BackgroundColor="#2C2C2E" Padding="15,8" ColumnDefinitions="40,*">
+                <ImageButton x:Name="BtnVoltar" Source="botaovoltar.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Start" Padding="0" BackgroundColor="Transparent" Clicked="OnVoltarTelaInicialCliked"/>
+                <Label Text="Meu Financeiro" TextColor="White" FontSize="18" VerticalOptions="Center" Margin="10,0,0,0" Grid.Column="1"/>
+            </Grid>
 
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Padding="20" Spacing="25">
 
+                    <Border StrokeShape="RoundRectangle 10" BackgroundColor="#402C2C2E" StrokeThickness="0" HorizontalOptions="Center" Padding="15,5">
+                        <Label Text="Referência: Fevereiro/2026" TextColor="#B0B0B0" FontSize="12" FontAttributes="Bold"/>
+                    </Border>
 
+                    <Border StrokeShape="RoundRectangle 25" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="25">
+                        <Border.Shadow>
+                            <Shadow Brush="#00E676" Offset="0,5" Radius="20" Opacity="0.2"/>
+                        </Border.Shadow>
 
+                        <StackLayout Spacing="5">
+                            <Label Text="Estimativa Líquida" TextColor="#A0A0A0" FontSize="14"/>
+                            <Label Text="R$ 2.450,00" TextColor="#00E676" FontSize="40" FontAttributes="Bold"/>
+                            <Label Text="Previsto para 05/03" TextColor="#606060" FontSize="12"/>
+                        </StackLayout>
+                    </Border>
 
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                        <Border StrokeShape="RoundRectangle 15" BackgroundColor="#253025" StrokeThickness="0" Padding="15">
+                            <StackLayout>
+                                <Label Text="⬆ Proventos" TextColor="#80E27E" FontSize="12"/>
+                                <Label Text="R$ 2.800,00" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                            </StackLayout>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 15" BackgroundColor="#302020" StrokeThickness="0" Padding="15">
+                            <StackLayout>
+                                <Label Text="⬇ Descontos" TextColor="#FF8A80" FontSize="12"/>
+                                <Label Text="- R$ 350,00" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                            </StackLayout>
+                        </Border>
+                    </Grid>
 
-		</Grid>
-	</Grid>
+                    <StackLayout Spacing="10">
+                        <Label Text="Detalhamento" TextColor="White" FontSize="16" FontAttributes="Bold"/>
 
+                        <Border StrokeShape="RoundRectangle 20" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="0">
+                            <VerticalStackLayout Spacing="0">
+
+                                <Grid ColumnDefinitions="*, Auto" Padding="20,15">
+                                    <StackLayout>
+                                        <Label Text="Salário Base" TextColor="White" FontAttributes="Bold"/>
+                                        <Label Text="30 dias" TextColor="#808080" FontSize="11"/>
+                                    </StackLayout>
+                                    <Label Grid.Column="1" Text="R$ 1.800,00" TextColor="#00E676" FontAttributes="Bold" VerticalOptions="Center"/>
+                                </Grid>
+                                <BoxView HeightRequest="1" Color="#353535"/>
+
+                                <Grid ColumnDefinitions="*, Auto" Padding="20,15">
+                                    <StackLayout>
+                                        <Label Text="Horas Extras 50%" TextColor="White" FontAttributes="Bold"/>
+                                        <Label Text="12 horas realizadas" TextColor="#808080" FontSize="11"/>
+                                    </StackLayout>
+                                    <Label Grid.Column="1" Text="R$ 250,00" TextColor="#00E676" FontAttributes="Bold" VerticalOptions="Center"/>
+                                </Grid>
+                                <BoxView HeightRequest="1" Color="#353535"/>
+
+                                <Grid ColumnDefinitions="*, Auto" Padding="20,15">
+                                    <StackLayout>
+                                        <Label Text="Adicional Noturno" TextColor="White" FontAttributes="Bold"/>
+                                        <Label Text="20% sobre a hora" TextColor="#808080" FontSize="11"/>
+                                    </StackLayout>
+                                    <Label Grid.Column="1" Text="R$ 180,00" TextColor="#00E676" FontAttributes="Bold" VerticalOptions="Center"/>
+                                </Grid>
+                                <BoxView HeightRequest="1" Color="#353535"/>
+
+                                <Grid ColumnDefinitions="*, Auto" Padding="20,15" BackgroundColor="#2A2020">
+                                    <StackLayout>
+                                        <Label Text="INSS" TextColor="#FF8A80" FontAttributes="Bold"/>
+                                        <Label Text="Desconto em folha" TextColor="#806060" FontSize="11"/>
+                                    </StackLayout>
+                                    <Label Grid.Column="1" Text="- R$ 190,00" TextColor="#FF5252" FontAttributes="Bold" VerticalOptions="Center"/>
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </Border>
+                    </StackLayout>
+
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15" Margin="0,0,0,30">
+                        <Grid ColumnDefinitions="50, *, Auto">
+                            <Frame Grid.Column="0" CornerRadius="10" BackgroundColor="#403040" Padding="0" HasShadow="False" HeightRequest="40" WidthRequest="40" BorderColor="Transparent">
+                                <Label Text="🍽️" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="10,0,0,0">
+                                <Label Text="Vale Refeição" TextColor="White" FontAttributes="Bold"/>
+                                <Label Text="22 dias x R$ 20,00" TextColor="#808080" FontSize="11"/>
+                            </StackLayout>
+
+                            <Label Grid.Column="2" Text="R$ 440,00" TextColor="#BB86FC" FontAttributes="Bold" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
 </ContentPage>
-
-
 
 
 

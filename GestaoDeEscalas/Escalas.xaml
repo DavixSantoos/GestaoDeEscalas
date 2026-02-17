@@ -2,32 +2,124 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestaoDeEscalas.Escalas"
-             Background="#1C1C1E"
-             Shell.NavBarIsVisible="False">
+             >
 
     <Grid>
         <Image Source="fundotelainicial.jpg" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Fill"/>
-        <Grid RowDefinitions="60,60,*">
-            <Grid BackgroundColor="#2C2C2E" Padding="15,8" Grid.Row="0" ColumnDefinitions="40,*">
-                <ImageButton x:Name="BtnVoltar" Source="botaovoltar.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFit" VerticalOptions="Center"  HorizontalOptions="Start" Padding="0"  BackgroundColor="Transparent" Clicked="OnVoltarTelaInicialCliked"/>
-                <Label Text="Minha Escala" TextColor="White" FontSize="18" VerticalOptions="Center" Margin="10,0,0,0"  Grid.Column="1"/> 
+
+        <Grid RowDefinitions="Auto, Auto, *">
+
+            <Grid Grid.Row="0" BackgroundColor="#2C2C2E" Padding="15,15" ColumnDefinitions="40,*">
+                <ImageButton x:Name="BtnVoltar" 
+                             Source="botaovoltar.png" 
+                             WidthRequest="30" HeightRequest="30" 
+                             VerticalOptions="Center" HorizontalOptions="Start" 
+                             BackgroundColor="Transparent" 
+                               Clicked="OnVoltarTelaInicialCliked" />
+                <Label Text="Minha Escala" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0,0,0" Grid.Column="1"/>
             </Grid>
 
+            <Border Grid.Row="1" 
+                    Margin="20,15" 
+                    StrokeShape="RoundRectangle 15" 
+                    BackgroundColor="#402C2C2E" 
+                    StrokeThickness="0"
+                    Padding="10">
+                <Grid ColumnDefinitions="50, *, 50">
+                    <Button Text="❮" BackgroundColor="Transparent" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Fevereiro 2026" TextColor="White" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1"/>
+                    <Button Grid.Column="2" Text="❯" BackgroundColor="Transparent" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                </Grid>
+            </Border>
 
+            <ScrollView Grid.Row="2">
+                <VerticalStackLayout Padding="20" Spacing="15">
 
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15" Opacity="0.6">
+                        <Grid ColumnDefinitions="60, *, Auto">
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="05" TextColor="#808080" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="QUI" TextColor="#606060" FontSize="12" HorizontalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0,0,0">
+                                <Label Text="Plantão Diurno" TextColor="#A0A0A0" FontAttributes="Bold"/>
+                                <Label Text="07:00 - 19:00" TextColor="#606060" FontSize="13"/>
+                            </StackLayout>
+                            <Label Grid.Column="2" Text="Realizado" TextColor="#A0A0A0" FontSize="11" VerticalOptions="Center" FontAttributes="Italic"/>
+                        </Grid>
+                    </Border>
 
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#311B92" Stroke="#6200EE" StrokeThickness="2" Padding="15">
+                        <Border.Shadow>
+                            <Shadow Brush="#6200EE" Offset="0,0" Radius="20" Opacity="0.4"/>
+                        </Border.Shadow>
 
+                        <Grid ColumnDefinitions="60, *, Auto">
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="17" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="TER" TextColor="#B39DDB" FontSize="12" HorizontalOptions="Center"/>
+                            </StackLayout>
 
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0,0,0">
+                                <Label Text="Atual" TextColor="White" FontAttributes="Bold"/>
+                                <Label Text="07:00 - 19:00" TextColor="#E0E0E0" FontSize="13"/>
+                                <Label Text="📍 Supermercado B" TextColor="#B39DDB" FontSize="11"/>
+                            </StackLayout>
 
+                            <Border Grid.Column="2" BackgroundColor="#6200EE" StrokeShape="RoundRectangle 8" Padding="10,5" VerticalOptions="Center" StrokeThickness="0">
+                                <Label Text="Agora" TextColor="White" FontSize="10" FontAttributes="Bold"/>
+                            </Border>
+                        </Grid>
+                    </Border>
 
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15">
+                        <Grid ColumnDefinitions="60, *, Auto">
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="19" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="QUI" TextColor="#A0A0A0" FontSize="12" HorizontalOptions="Center"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0,0,0">
+                                <Label Text="Amanha" TextColor="White" FontAttributes="Bold"/>
+                                <Label Text="07:00 - 19:00" TextColor="#A0A0A0" FontSize="13"/>
+                            </StackLayout>
+
+                            <Border Grid.Column="2" BackgroundColor="#2E7D32" StrokeShape="RoundRectangle 8" Padding="10,5" VerticalOptions="Center" StrokeThickness="0">
+                                <Label Text="Confirmado" TextColor="White" FontSize="10" FontAttributes="Bold"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#252525" StrokeThickness="0" Padding="15">
+                        <Grid ColumnDefinitions="60, *">
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="20" TextColor="#606060" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="SEX" TextColor="#606060" FontSize="12" HorizontalOptions="Center"/>
+                            </StackLayout>
+                            <Label Grid.Column="1" Text="😴 Folga Programada" TextColor="#808080" VerticalOptions="Center" Margin="15,0,0,0" FontAttributes="Italic"/>
+                        </Grid>
+                    </Border>
+
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15">
+                        <Grid ColumnDefinitions="60, *, Auto">
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="21" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="SAB" TextColor="#A0A0A0" FontSize="12" HorizontalOptions="Center"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0,0,0">
+                                <Label Text=" Noturno" TextColor="White" FontAttributes="Bold"/>
+                                <Label Text="19:00 - 07:00" TextColor="#A0A0A0" FontSize="13"/>
+                            </StackLayout>
+
+                            <Border Grid.Column="2" BackgroundColor="#2E7D32" StrokeShape="RoundRectangle 8" Padding="10,5" VerticalOptions="Center" StrokeThickness="0">
+                                <Label Text="Confirmado" TextColor="White" FontSize="10" FontAttributes="Bold"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
         </Grid>
     </Grid>
-
 </ContentPage>
-
-
-
-
-
-
-
