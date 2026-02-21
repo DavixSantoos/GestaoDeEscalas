@@ -29,7 +29,7 @@ namespace GestaoDeEscalas.Services
             {
               var result =  await response.Content.ReadFromJsonAsync<ResponseLoginDTO>();
 
-                return result;
+                
                 
             }
 
