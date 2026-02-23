@@ -61,8 +61,6 @@ namespace apiAutenticacao.Services
                             .ToList()
                         }
 
-
-
                     };
 
                 }
