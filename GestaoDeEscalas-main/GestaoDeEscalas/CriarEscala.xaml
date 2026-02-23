@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.CriarEscala"
+             Title="CriarEscala"
+             BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- TÌTULO -->
+            <Label Text="Criar Nova Escala"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+
+            <!-- CARD EVENTO -->
+            <Border BackgroundColor="#1E1E1E"
+                    Padding="20"
+                    StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Evento"
+                           TextColor="#AAAAAA"
+                           FontAttributes="Bold"/>
+
+                    <Picker x:Name="PickerEvento"
+                            Title="Selecione o evento"
+                            BackgroundColor="#2A2A2A"
+                            TextColor="White"/>
+
+                    <Label Text="Data"
+                           TextColor="#AAAAAA"
+                           FontAttributes="Bold"/>
+
+                    <DatePicker x:Name="DataEscala"
+                                BackgroundColor="#2A2A2A"
+                                TextColor="White"/>
+
+                    <Label Text="Horário"
+                           TextColor="#AAAAAA"
+                           FontAttributes="Bold"/>
+
+                    <TimePicker x:Name="HorarioEscala"
+                                BackgroundColor="#2A2A2A"
+                                TextColor="White"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- CARD SETOR -->
+            <Border BackgroundColor="#1E1E1E"
+                    Padding="20"
+                    StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Setor"
+                           TextColor="#AAAAAA"
+                           FontAttributes="Bold"/>
+
+                    <Picker x:Name="PickerSetor"
+                            Title="Selecione o setor"
+                            BackgroundColor="#2A2A2A"
+                            TextColor="White"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- CARD USUÁRIO -->
+            <Border BackgroundColor="#1E1E1E"
+                    Padding="20"
+                    StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Usuário"
+                           TextColor="#AAAAAA"
+                           FontAttributes="Bold"/>
+
+                    <Picker x:Name="PickerUsuario"
+                            Title="Selecione o usuário"
+                            BackgroundColor="#2A2A2A"
+                            TextColor="White"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- BOTÕES -->
+            <Button Text="Salvar Escala"
+                    BackgroundColor="#3A8DFF"
+                    TextColor="White"
+                    HeightRequest="55"
+                    CornerRadius="18"
+                    FontAttributes="Bold"/>
+
+            <Button Text="Cancelar"
+                    BackgroundColor="Transparent"
+                    BorderColor="#3A8DFF"
+                    BorderWidth="1"
+                    TextColor="#3A8DFF"
+                    HeightRequest="55"
+                    CornerRadius="18"
+                    Clicked="OnCancelarClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
