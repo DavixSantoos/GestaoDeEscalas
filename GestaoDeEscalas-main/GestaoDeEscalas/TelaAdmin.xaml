@@ -1,0 +1,112 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
+             x:Class="GestaoDeEscalas.TelaAdmin"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+
+    <!-- grid principal -->
+    <Grid RowDefinitions="Auto,*"
+          ColumnDefinitions="2*,*"
+          Padding="10">
+
+        <Grid Grid.Row="0"
+              Grid.ColumnSpan="2"
+              BackgroundColor="#121212"
+              Padding="10"
+              ColumnDefinitions="Auto,*,Auto">
+
+            <!--botao voltar-->
+            <Button Text="←"
+                    BackgroundColor="Transparent"
+                    BorderColor="#727272"
+                    BorderWidth="1"
+                    TextColor="White"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Clicked="OnVoltarClicked"/>
+
+            <Label Grid.Column="1"
+                   Text="Escalas"
+                   FontFamily="Bold"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            
+            <!--botao editar-->  
+            <Button Grid.Column="2"
+                    Text="Editar"
+                    BackgroundColor="#3A8DFF"
+                    BorderColor="#727272"
+                    BorderWidth="1"
+                    TextColor="White"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    FontAttributes="Bold"
+                    FontSize="16"/>         
+        </Grid>
+
+        <!-- calendário -->
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="DarkGray"
+                StrokeShape="RoundRectangle 20"
+                Margin="10,10,20,10"
+                Padding="0">
+
+            <scheduler:SfScheduler
+                x:Name="Agenda"
+                View="Week"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+        </Border>
+
+        <!-- card da direita  -->
+        <Border Grid.Row="1"
+        Grid.Column="1"
+        BackgroundColor="#1E1E1E"
+        StrokeShape="RoundRectangle 20"
+        Margin="10,10,10,10"
+        Padding="25">
+
+            <VerticalStackLayout Spacing="20">
+
+                <Label Text="Administração"
+               FontFamily="BebasNeue"
+               FontSize="28"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+
+                <Button Text="Solicitações de troca"
+                BackgroundColor="#3A8DFF"
+                TextColor="White"
+                HeightRequest="55"
+                CornerRadius="28"
+                FontAttributes="Bold"
+                FontSize="16"
+                Clicked="OnSolicitacoesTrocaClicked"
+                />
+
+                <Button Text="Funcionários"
+                BackgroundColor="Transparent"
+                BorderColor="#3A8DFF"
+                BorderWidth="1.5"
+                TextColor="#3A8DFF"
+                HeightRequest="55"
+                CornerRadius="28"
+                FontAttributes="Bold"
+                FontSize="16"
+                Clicked="OnFuncionariosClicked"
+                />
+
+            </VerticalStackLayout>
+
+        </Border>
+
+    </Grid>
+
+</ContentPage>

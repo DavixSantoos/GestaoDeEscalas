@@ -1,0 +1,107 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.TelaFuncionarios"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="Auto,*" Padding="20">
+
+        <!-- topo -->
+        <Grid ColumnDefinitions="Auto,*,Auto"
+      VerticalOptions="Center">
+
+            <!-- botao voltar -->
+            <Button Text="←"
+            FontSize="20"
+            BackgroundColor="Transparent"
+            TextColor="White"
+            WidthRequest="40"
+            HeightRequest="40"
+            Clicked="OnVoltarClicked"/>
+
+            <!-- título -->
+            <Label Grid.Column="1"
+                Text="Funcionários"
+                FontFamily="Bold"
+                FontSize="40"
+                FontAttributes="Bold"
+                TextColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>        
+
+            <!-- botao novo funcionário -->
+            <Button Grid.Column="2"
+            Text="Adicionar funcionário"
+            BackgroundColor="#3A8DFF"
+            BorderColor="#727272"
+            BorderWidth="1"
+            TextColor="White"
+            HeightRequest="48"
+            CornerRadius="24"
+            FontAttributes="Bold"
+            FontSize="16"/>
+        </Grid>
+
+        <!-- lista -->
+        <CollectionView Grid.Row="1"
+                x:Name="ListaFuncionarios"
+                Margin="10,30,10,0">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="15" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="#1E1E1E"
+                    StrokeThickness="1"
+                    Stroke="#2C2C2C"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="20">
+
+                        <Grid ColumnDefinitions="10,*,Auto">
+
+                            <BoxView WidthRequest="10"
+                             BackgroundColor="{Binding CorSetor}"
+                             VerticalOptions="Fill"/>
+
+                            <VerticalStackLayout Grid.Column="1"
+                                         Margin="10,0,0,0"
+                                         Spacing="6">
+
+                                <Label Text="{Binding Nome}"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+
+                                <Label Text="{Binding Cargo}"
+                               FontSize="13"
+                               TextColor="#B0B0B0"/>
+
+                                <Label Text="{Binding Setor}"
+                               FontSize="12"
+                               TextColor="#1565C0"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="2"
+                                         VerticalOptions="Center">
+
+                                <Button Text="Editar"
+                                BackgroundColor="Transparent"
+                                BorderColor="#727272"
+                                BorderWidth="1"
+                                TextColor="White"
+                                HeightRequest="48"
+                                CornerRadius="24"
+                                FontAttributes="Bold"
+                                FontSize="16"/>
+                            </VerticalStackLayout>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+</ContentPage>

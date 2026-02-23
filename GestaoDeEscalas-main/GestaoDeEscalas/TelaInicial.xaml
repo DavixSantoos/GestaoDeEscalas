@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.TelaInicial"
+             BackgroundColor="black">
+    <Grid>
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="black" Offset="0.1" />
+                    <GradientStop Color="black" Offset="1.0" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid RowDefinitions="70, Auto, *">
+
+            <Grid Grid.Row="0"
+                  ColumnDefinitions="60, *, 60"
+                  Padding="15,10">
+                
+                <Border StrokeShape="RoundRectangle 25"
+                        HeightRequest="45"
+                        WidthRequest="45"
+                        BackgroundColor="#2A2A2A"
+                        StrokeThickness="0">
+                    
+                    <ImageButton x:Name="BtnPerfil" Source="perfil.png" Padding="8" Clicked="BtnPerfil_Clicked"/>
+                    
+                </Border>
+
+                <Label Grid.Column="1"
+                       Text="GESTÃO DE ESCALA" 
+                       TextColor="White"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       CharacterSpacing="2"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       FontFamily="Bold"/>
+                
+                <ImageButton Grid.Column="2" Source="notification.png" WidthRequest="25" BackgroundColor="Transparent"/>
+                
+            </Grid>
+
+            <ScrollView Grid.Row="2">
+                <VerticalStackLayout Padding="20" Spacing="25">
+
+                    <Border StrokeShape="RoundRectangle 28" BackgroundColor="#1E1E1E" Padding="25" StrokeThickness="0.5" Stroke="#333333">
+                        <Border.Shadow>
+                            <Shadow Radius="15" Opacity="0.6" Offset="0,10" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                              ColumnDefinitions="*,auto"
+                              RowSpacing="15">
+                            <VerticalStackLayout Grid.Row="0"
+                                                 Grid.Column="0">
+                                <Label Text="SUA PRÓXIMA ESCALA"
+                                       TextColor="#BB86FC"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       CharacterSpacing="1"/>
+                                <Label Text="Segunda-feira, 10 de Julho"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       Margin="0,5,0,0"/>
+                            </VerticalStackLayout>
+
+                            <!--campo de confirmacao-->
+                            <Border Grid.Row="0"
+                                    Grid.Column="1"
+                                    StrokeShape="RoundRectangle 12"
+                                    BackgroundColor="green"
+                                    Padding="10,4"
+                                    VerticalOptions="Start"
+                                    
+                                    >
+
+                                <Label Text="CONFIRMADA"
+                                       TextColor="white"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HeightRequest="20"
+                                       />         
+
+                            </Border>
+                            
+                            <!--local-->
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Text="08:00 - 19:00" 
+                                   TextColor="White"
+                                   FontSize="48"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Start"/>
+
+                            <HorizontalStackLayout Grid.Row="2"
+                                                   Spacing="8">
+                                <Label Text="📍"
+                                       VerticalOptions="Center"/>
+                                <Label Text="Mercearia Central"
+                                       TextColor="#ADADAD"
+                                       FontSize="14"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <VerticalStackLayout Spacing="15">
+                        
+                        <!--açoes rápidas-->
+                        <Label Text="Ações Rápidas"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               Margin="5,0"/>
+
+                        <Grid ColumnDefinitions="*,*"
+                              RowDefinitions="120, 120"
+                              ColumnSpacing="15"
+                              RowSpacing="15">
+                            
+                            <!--botao registrar ponto-->
+                            <Button Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="REGISTRAR PONTO" 
+                                    BackgroundColor="#3A8DFF"
+                                    TextColor="White"
+                                    CornerRadius="20"
+                                    FontSize="13"
+                                    FontAttributes="Bold"
+                                    Clicked="BtnRegistrarPonto_Clicked"/>
+
+                            <!--botao minha escala-->
+                            <Button Grid.Row="0" Grid.Column="1"
+                                    Text="MINHA ESCALA" 
+                                    BackgroundColor="#2A2A2A"
+                                    TextColor="White"
+                                    CornerRadius="20"
+                                    FontSize="13"
+                                    Clicked="BtnEscalas_Clicked"/>
+                            
+                            <!--botão trocas-->
+                            <Button Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="TROCAS" 
+                                    BackgroundColor="#2A2A2A"
+                                    TextColor="White"
+                                    CornerRadius="20"
+                                    FontSize="13"
+                                    Clicked="BtnTrocas_Clicked"/>
+
+                        </Grid>
+                    </VerticalStackLayout>
+
+                    <Border StrokeShape="RoundRectangle 20" BackgroundColor="#1E1E1E" Padding="20" StrokeThickness="0">
+                        <VerticalStackLayout Spacing="12">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Label Text="Banco de Horas (Fev)" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                                <Label Grid.Column="1" Text="120h / 180h" TextColor="#BB86FC" FontSize="12"/>
+                            </Grid>
+
+                            <Grid HeightRequest="8">
+                                <RoundRectangle Fill="#333333" CornerRadius="4"/>
+                                <RoundRectangle Fill="#6200EE" CornerRadius="4" WidthRequest="200" HorizontalOptions="Start"/>
+                            </Grid>
+
+                            <Label Text="Você atingiu 66% da sua meta mensal" TextColor="#767676" FontSize="11" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+        <BoxView x:Name="SombraMenu" Color="Black" Opacity="0" InputTransparent="True">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnFecharMenuClicked"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <Border x:Name="MenuGaveta" TranslationX="-320" WidthRequest="280" 
+                HorizontalOptions="Start" VerticalOptions="Fill" 
+                BackgroundColor="#1A1A1A" StrokeThickness="0" StrokeShape="RoundRectangle 0,30,30,0">
+            <Grid RowDefinitions="180,*">
+                <StackLayout Grid.Row="0" BackgroundColor="#6200EE" Padding="30,60,20,20">
+                    <Border StrokeShape="RoundRectangle 30" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Margin="0,0,0,10">
+                        <Image Source="perfil.png" Aspect="AspectFill"/>
+                    </Border>
+                    <Label Text="Olá, Usuário" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Padding="15" Spacing="5">
+                    <Button Text="Início" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Fill" ContentLayout="Left, 20" HeightRequest="50"/>
+                    <Button Text="Minhas Escalas" BackgroundColor="Transparent" TextColor="#B0B0B0" HorizontalOptions="Fill" ContentLayout="Left, 20" HeightRequest="50"/>
+                    <Button Text="Configurações" BackgroundColor="Transparent" TextColor="#B0B0B0" HorizontalOptions="Fill" ContentLayout="Left, 20" HeightRequest="50"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

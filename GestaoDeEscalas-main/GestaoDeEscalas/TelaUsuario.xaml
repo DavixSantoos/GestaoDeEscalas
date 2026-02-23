@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoEscala.NewPage1"
+             Title="TelaUsuario" BackgroundColor="#121212">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Cabeçalho -->
+            <Label Text="Minhas Escalas"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+
+            <!-- Próxima Escala -->
+            <Border BackgroundColor="#1E1E1E"
+                   StrokeThickness="0"
+                   Padding="15">
+
+                <VerticalStackLayout>
+                    <Label Text="Próxima Escala"
+                           TextColor="#AAAAAA"/>
+
+                    <Label Text="25/02 - Som - 19:00"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+
+                    <Button Text="Confirmar Presença"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            CornerRadius="15"
+                            Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Ações -->
+            <Label Text="Ações"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <Button Text="Solicitar Troca"
+                    BackgroundColor="#3A8DFF"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+            <Button Text="Atualizar Disponibilidade"
+                    BackgroundColor="#3A8DFF"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+            <Button Text="Histórico"
+                    BackgroundColor="#3A8DFF"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

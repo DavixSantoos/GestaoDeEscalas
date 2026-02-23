@@ -1,0 +1,130 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.Perfil"
+             BackgroundColor="#121212">
+
+    <Grid>
+        <Grid RowDefinitions="60,60,*">
+            <Grid Background="#121212"
+                  Padding="15,8"
+                  Grid.Row="0"
+                  ColumnDefinitions="40,*">
+                
+                <!--botao voltar-->
+                <ImageButton x:Name="BtnVoltar"
+                             Source="botaovoltar.png"
+                             WidthRequest="0"
+                             HeightRequest="0"
+                             Aspect="AspectFit"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Start"
+                             Padding="0"
+                             BackgroundColor="Transparent"
+                             Clicked="OnVoltarTelaInicialCliked"/>
+                
+                <Label Text="Seu Perfil"
+                       TextColor="White"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       Margin="20,0,0,0"
+                       Grid.Column="1"/>
+            </Grid>
+
+            <ScrollView Grid.Row="2">
+
+                <VerticalStackLayout Spacing="10"
+                                     Padding="20"
+                                     VerticalOptions="Center">
+
+                    <Border Stroke="#2C2C2E"
+                            StrokeThickness="2"
+                            Background="#2C2C2E"
+                            Padding="30"
+                            WidthRequest="500">
+                        
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="5,5"
+                                    Opacity="0.5" />
+                        </Border.Shadow>
+
+
+                        <Grid RowDefinitions="*,*,*,*,*,*,*"
+                              VerticalOptions="Center"
+                              WidthRequest="400">
+
+                            <Label Grid.Row="1"
+x:Name="LabelID"
+                                   Text="Id:#0000"
+                                   TextColor="#B0B0B0"
+                                   FontSize="14"
+                                   HorizontalTextAlignment="Center" />
+                            <Image Grid.Row="2"
+                                   x:Name="fotoAlterar"
+                                   Source="mulher.png"
+                                   HeightRequest="100"
+                                   Aspect="AspectFit"
+                                   HorizontalOptions="Center"/>
+
+                            <Label Grid.Row="3"
+                                   Text="NomeUsuario"
+                                   TextColor="White"
+                                   FontSize="18"
+                                   WidthRequest="150"
+                                   HeightRequest="30"
+                                   HorizontalOptions="Center" Margin="0,15" />
+
+                            <Label Grid.Row="4"
+                                   x:Name="Email"
+                                   TextColor="White"
+                                   Text="EmailUsuario@Outlook.com.br"
+                                   FontSize="15"
+                                   HeightRequest="30" HorizontalOptions="Center"/>
+                            <HorizontalStackLayout Grid.Row="5"
+                                                   HorizontalOptions="Start"
+                                                   Spacing="10" Margin="0,10,0,0">
+                                <Label x:Name="cargo"
+                                       TextColor="#3498DB"
+                                       Text="Gerente"
+                                       FontAttributes="Bold"
+                                       HeightRequest="30" />
+                               
+                                <Border Background="#3A3A3C"
+                                        Padding="12,4"
+                                        StrokeThickness="0">
+                                    
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="8"/>
+                                    </Border.StrokeShape>
+                                    
+                                    <Label x:Name="Setor"
+                                           TextColor="White"
+                                           Text="Setor: Logistico"
+                                           FontSize="11"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center"/>
+                                   
+                                </Border>
+                               
+                            </HorizontalStackLayout>
+                            <Button Grid.Row="6"
+                                    Text="Sair"
+                                    VerticalOptions="End"
+                                    Background="Red"
+                                    FontAttributes="Italic"
+                                    HeightRequest="30"
+                                    Margin="0,50,0,0"
+                                    Clicked="OnVoltarTelaLogin"/>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>
+
+  

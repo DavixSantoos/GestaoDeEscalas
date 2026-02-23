@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.Cadastro"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="*">
+        <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
+            <Border BackgroundColor="#000000"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    MaximumWidthRequest="700"
+                    Padding="60,80"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="28"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="25" HorizontalOptions="Fill">
+
+                    <Label Text="Criar Conta"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           FontFamily="BebasNeue"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           Margin="0,0,0,10"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                          RowSpacing="15"
+                          HorizontalOptions="Fill">
+
+                        <VerticalStackLayout Grid.Row="0" Spacing="5">
+                            <Label Text="Nome Completo" Margin="8,0" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                            <Entry x:Name="Nome"
+                                   Placeholder="Digite seu nome"
+                                   PlaceholderColor="#767676"
+                                   TextColor="White"
+                                   BackgroundColor="#2A2A2A"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="5">
+                            <Label Text="E-mail" Margin="8,0" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                            <Entry x:Name="EmailCadastro"
+                                   Placeholder="Digite seu e-mail"
+                                   PlaceholderColor="#767676"
+                                   TextColor="White"
+                                   BackgroundColor="#2A2A2A"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"
+                                   Keyboard="Email"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Row="2" Spacing="5">
+                            <Label Text="Senha" Margin="8,0" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                            <Grid>
+                                <Entry x:Name="SenhaCadastro"
+                                       IsPassword="True"
+                                       Placeholder="Crie uma senha"
+                                       PlaceholderColor="#767676"
+                                       TextColor="White"
+                                       BackgroundColor="#2A2A2A"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"/>
+
+                                <!--<ImageButton x:Name="BtnOlho" 
+                                             Source="olhofechado.png" 
+                                             HeightRequest="20" 
+                                             WidthRequest="20" 
+                                             HorizontalOptions="End" 
+                                             Margin="0,0,15,0"
+                                             VerticalOptions="Center"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnShowPasswordClicked"/>-->
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <Button Grid.Row="3"
+                                Text="Cadastrar"
+                                BackgroundColor="Blue"
+                                TextColor="Black"
+                                HeightRequest="48"
+                                CornerRadius="24"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Margin="0,10,0,0"
+                                Clicked="OnCadastrarClicked"/>
+
+                        <Button Grid.Row="4"
+                                Text="Já tenho conta"
+                                BackgroundColor="Transparent"
+                                BorderColor="#727272"
+                                BorderWidth="1"
+                                TextColor="White"
+                                HeightRequest="48"
+                                CornerRadius="24"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Clicked="OnVoltarInicialClicked"/>
+                    </Grid>
+
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>
