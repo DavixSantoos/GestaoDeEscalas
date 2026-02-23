@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.Trocas"
+             Background="black"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid RowDefinitions="60, Auto, *">
+
+            <Grid BackgroundColor="black"
+                  Padding="15,8" Grid.Row="0"
+                  ColumnDefinitions="40,*">
+                
+                <ImageButton x:Name="BtnVoltar"
+                  Source="botaovoltar.png"
+                             WidthRequest="25"
+                             HeightRequest="25"
+                             Aspect="AspectFit"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Start"
+                             Padding="0"
+                             BackgroundColor="Transparent"
+                             Clicked="OnVoltarTelaInicialCliked"/>
+                
+                <Label Text="Central de Trocas"
+                       TextColor="White"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       Margin="0,0,0,0" 
+                       Grid.Column="1"/>
+            </Grid>
+
+            <Button Grid.Row="1" 
+                    Text="+ SOLICITAR TROCA" 
+                    BackgroundColor="#3A8DFF" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Margin="20,20,20,20"/>
+
+            <ScrollView Grid.Row="2">
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    <Label Text="Disponíveis para pegar" TextColor="#B0B0B0" FontSize="14" FontAttributes="Bold" Margin="0,10,0,0"/>
+
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <StackLayout>
+                                <Label Text="Plantão do Carlos" TextColor="#00E676" FontSize="12" FontAttributes="Bold"/>
+                                <Label Text="20 Fev - Sexta" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="07:00 as 19:00 - UTI A" TextColor="#A0A0A0" FontSize="12"/>
+                            </StackLayout>
+
+                            <Button Grid.Column="1" Text="Aceitar" BackgroundColor="#2E7D32" TextColor="White" HeightRequest="35" FontSize="12" CornerRadius="18" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="#2C2C2E" StrokeThickness="0" Padding="15">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <StackLayout>
+                                <Label Text="Plantão da Ana" TextColor="#00E676" FontSize="12" FontAttributes="Bold"/>
+                                <Label Text="22 Fev - Domingo" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="19:00 as 07:00 - PS Infantil" TextColor="#A0A0A0" FontSize="12"/>
+                            </StackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="Aceitar"
+                                    BackgroundColor="#2E7D32"
+                                    TextColor="White"
+                                    HeightRequest="35" FontSize="12"
+                                    CornerRadius="18" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Label Text="Minhas Solicitações" TextColor="#B0B0B0"
+                           FontSize="14" FontAttributes="Bold" Margin="0,10,0,0"/>
+
+                    <Border StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#2C2C2E" StrokeThickness="1"
+                            Stroke="#FFB74D" Padding="15">
+                        
+                        <StackLayout Spacing="8">
+                            <Grid ColumnDefinitions="*, Auto">
+                                
+                                <Label Text="Aguardando Colega"
+                                       TextColor="#FFB74D" FontAttributes="Bold"
+                                       FontSize="12"/>
+                                <Label Text="Há 2h" TextColor="#606060"
+                                       FontSize="10"/>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="*, Auto, *">
+                                <Label Text="15 Fev" TextColor="White"
+                                       FontSize="16" FontAttributes="Bold"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="1" Text="➔"
+                                       TextColor="#808080"
+                                       FontSize="18" HorizontalOptions="Center"/>
+                                <Label Grid.Column="2" Text="???"
+                                       TextColor="#808080" FontSize="16"
+                                       FontAttributes="Bold" HorizontalOptions="End"/>
+                            </Grid>
+
+                            <Label Text="Quero folgar neste dia"
+                                   TextColor="#808080"
+                                   FontSize="11"
+                                   FontAttributes="Italic"/>
+                        </StackLayout>
+                    </Border>
+
+                    <Border StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#253025"
+                            StrokeThickness="0" Padding="15"
+                            Opacity="0.7">
+                        <StackLayout Spacing="8">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Label Text="Troca Realizada"
+                                       TextColor="#66BB6A"
+                                       FontAttributes="Bold"
+                                       FontSize="12"/>
+                                <Label Text="02 Fev"
+                                       TextColor="#606060"
+                                       FontSize="10"/>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="*, Auto, *">
+                                <Label Text="02 Fev"
+                                       TextColor="#808080"
+                                       FontSize="16"
+                                       TextDecorations="Strikethrough"
+                                       HorizontalOptions="Start"/>
+                                
+                                <Label Grid.Column="1" Text="➔"
+                                       TextColor="#66BB6A"
+                                       FontSize="18"
+                                       HorizontalOptions="Center"/>
+                                <Label Grid.Column="2"
+                                       Text="Roberto"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"/>
+                            </Grid>
+                        </StackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+        </Grid>
+    </Grid>
+</ContentPage>

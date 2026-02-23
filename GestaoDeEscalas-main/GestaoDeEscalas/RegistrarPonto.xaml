@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestaoDeEscalas.RegistrarPonto"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="black">
+
+    <Grid>
+       
+        <Grid RowDefinitions="Auto,*">
+
+            <Grid BackgroundColor="#2C2C2E" Padding="15,15" Grid.Row="0" ColumnDefinitions="40,*">
+                <ImageButton x:Name="BtnVoltar" 
+                             Source="botaovoltar.png" 
+                             WidthRequest="30"
+                             HeightRequest="30" 
+                             VerticalOptions="Center"
+                             HorizontalOptions="Start" 
+                             BackgroundColor="Transparent" 
+                             Clicked="onVoltarTelaInicialCliked"/>
+                <Label Text="Registrar Ponto" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0,0,0" Grid.Column="1"/>
+            </Grid>
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+
+                    <Border Stroke="#2C2C2E" 
+                            StrokeThickness="0" 
+                            Background="#2C2C2E" 
+                            Padding="30" 
+                            WidthRequest="350" 
+                            HorizontalOptions="Center">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25"/>
+                        </Border.StrokeShape>
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,5" Opacity="0.5" Radius="10"/>
+                        </Border.Shadow>
+
+                        <VerticalStackLayout Spacing="20">
+
+                            <Label Text="14:35" 
+                                   TextColor="White" 
+                                   FontSize="50" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label Text="17 Fev, Terça-feira" 
+                                   TextColor="#A0A0A0" 
+                                   FontSize="14" 
+                                   HorizontalTextAlignment="Center"
+                                   Margin="0,-10,0,10"/>
+
+                            <BoxView HeightRequest="1"
+                                     Color="#404040"
+                                     Margin="0,0,0,10"/>
+
+                            <Label Text="Toque para registrar"
+                                   TextColor="#D0D0D0"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Button x:Name="BtnRegistrarPonto" 
+                                    Text="REGISTRAR ENTRADA" 
+                                    ImageSource="ponto.png"
+                                    ContentLayout="Top, 10" 
+                                    BackgroundColor="#3A8DFF" 
+                                    TextColor="White" 
+                                    FontAttributes="Bold"
+                                    HeightRequest="100"
+                                    CornerRadius="15"
+                                   />
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>
