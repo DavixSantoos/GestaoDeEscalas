@@ -19,7 +19,7 @@ namespace GestaoDeEscalas
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            builder.Services.AddHttpClient<AuthService>();
+            
 
             return builder.Build();
 

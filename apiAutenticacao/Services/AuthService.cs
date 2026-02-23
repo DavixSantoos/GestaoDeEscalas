@@ -9,10 +9,12 @@ using static BCrypt.Net.BCrypt;
 
 namespace apiAutenticacao.Services
 {
-    public class AuthService
+    public class AuthService 
     {
         // Implementação dos métodos de autenticação e autorização
-
+        
+     
+        
         private readonly AppDbContext _context;
         private readonly IConfiguration _config;
 
