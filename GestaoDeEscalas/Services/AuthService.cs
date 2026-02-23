@@ -14,11 +14,12 @@ namespace GestaoDeEscalas.Services
 
         private readonly HttpClient _httpClient;
 
-        private const string BaseUrl = "https://localhost:7177/";
 
-        public AuthService(HttpClient httpClient)
+        private const string BaseUrl = "https://localhost:7156/";
+
+        public AuthService()
         {
-            _httpClient = httpClient;
+            _httpClient = new HttpClient();
         }
 
         public async Task<ResponseLoginDTO> LoginAsync(RequestLoginDTO dadosUsuario)

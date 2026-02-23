@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using GestaoDeEscalas.Services;
 
 namespace GestaoDeEscalas
 {
@@ -18,6 +19,9 @@ namespace GestaoDeEscalas
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<AuthService>();
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddHttpClient<AuthService>();
 
             return builder.Build();
 

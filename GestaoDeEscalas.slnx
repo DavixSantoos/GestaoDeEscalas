@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="../back/apiAutenticacao/apiAutenticacao.csproj" />
+  <Project Path="apiAutenticacao/apiAutenticacao.csproj" />
   <Project Path="GestaoDeEscalas/GestaoDeEscalas.csproj" />
 </Solution>

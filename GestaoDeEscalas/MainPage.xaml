@@ -31,13 +31,14 @@
                   WidthRequest="400">
 
                         <Label Grid.Row="0" Text="E-mail" TextColor="#D3D3D3"/>
-                        <Entry Grid.Row="1" Placeholder="E-mail" Margin="0,0,0,10" TextColor="White"/>
+                        <Entry Grid.Row="1" Placeholder="E-mail" Margin="0,0,0,10" TextColor="White" x:Name="Email"/>
 
                         <Label Grid.Row="2" Text="Senha" Margin="0,0,0,10" TextColor="#D3D3D3"/>
-                        <Entry Grid.Row="3" Placeholder="********" Text="*****" Margin="0,0,0,40" IsPassword="True" TextColor="White"/>
+                        <Entry Grid.Row="3" Placeholder="********" Text="*****" Margin="0,0,0,40" IsPassword="True" TextColor="White" x:Name="Senha"/>
 
                         <!-- Botao para Login e cadastro -->
-                        <Button Grid.Row="4" Text="Faça Seu Login" BackgroundColor="#512BD4" TextColor="White"  Margin="0,0,0,40" Clicked="OnTelaInicialCliked" />
+                        <Button 
+                            Grid.Row="4" Text="Faça Seu Login" BackgroundColor="#512BD4" TextColor="White"  Margin="0,0,0,40" Clicked="OnTelaInicialCliked" />
 
                         <Button Grid.Row="5" Text="Crie uma conta" BackgroundColor="Transparent" TextColor="#512BD4" Margin="0,0,0,20" Clicked="OnCadastrarClicked"/>
                     </Grid>
