@@ -15,6 +15,11 @@ namespace GestaoDeEscalas
 
         private readonly AuthService _authservice;
 
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
         public MainPage(AuthService authService)
         {
             InitializeComponent();

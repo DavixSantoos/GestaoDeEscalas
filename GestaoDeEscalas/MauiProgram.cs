@@ -20,8 +20,8 @@ namespace GestaoDeEscalas
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<AuthService>();
-            builder.Services.AddTransient<MainPage>();
-            builder.Services.AddHttpClient<AuthService>();
+            //builder.Services.AddTransient<MainPage>();
+            //builder.Services.AddHttpClient<AuthService>();
 
             return builder.Build();
 

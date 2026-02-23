@@ -11,7 +11,6 @@ namespace GestaoDeEscalas.Services
     public class AuthService
     {
 
-
         private readonly HttpClient _httpClient;
 
 
