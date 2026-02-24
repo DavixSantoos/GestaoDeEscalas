@@ -12,6 +12,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         
     }
+
     public MainPage(AuthService authService)
     {
         InitializeComponent();
@@ -57,12 +58,12 @@ public partial class MainPage : ContentPage
 
         var responseLogin = await _authService.LoginAsync(dadosUsuarioGE);
 
-        if (responseLogin.Success)
+        if (!responseLogin.Success)
         {
             await Shell.Current.GoToAsync("TelaInicial");
             return;
         }
 
-        await DisplayAlert("Erro", "Dados inválidos. Verifique o e-mail e a senha.", "OK");
+        await DisplayAlert("Erro de Login", "Dados inválidos. Verifique seus dadso e tente novamente ", "OK");
     }
 }

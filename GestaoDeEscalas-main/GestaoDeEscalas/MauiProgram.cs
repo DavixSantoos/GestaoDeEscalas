@@ -27,7 +27,7 @@ namespace GestaoDeEscalas
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddSingleton<HttpClient>();
             builder.Services.AddSingleton<AuthService>();
             //builder.Services.AddHttpClient<AuthService>();
 

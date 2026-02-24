@@ -14,7 +14,7 @@ namespace GestaoDeEscalas.Services
 
         private readonly HttpClient _httpClient;
 
-        private const string BaseUrl = "https://localhost:7177/";
+        private const string BaseUrl = "https://localhost:7156/";
 
         public AuthService()
         {
@@ -29,13 +29,17 @@ namespace GestaoDeEscalas.Services
             {
               var result =  await response.Content.ReadFromJsonAsync<ResponseLoginDTO>();
 
-                return result;
+                return new ResponseLoginDTO { 
+                
+                    Success = false,
+                    Message = "Login realizado con sucesso"
+                };
                 
            }
 
             return new ResponseLoginDTO
             {
-                Success = false,
+                Success = true,
                 Message = "Login falhou. Tente novamente."
             };
 
