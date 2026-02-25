@@ -109,17 +109,17 @@ namespace apiAutenticacao.Services
                 Nome = dadosUsuarioCadastro.Nome,
                 Email = dadosUsuarioCadastro.Email,
                 Senha = HashPassword(dadosUsuarioCadastro.Senha),
-                Enderecos = dadosUsuarioCadastro.Enderecos.Select(e => new Endereco
-                {
-                    Cep = e.Cep,
-                    Logradouro = e.Logradouro,
-                    Numero = e.Numero,
-                    Complemento = e.Complemento,
-                    Bairro = e.Bairro,
-                    Cidade = e.Cidade,
-                    Estado = e.Estado,
-                    Pais = e.Pais
-                }).ToList(),
+                //Enderecos = dadosUsuarioCadastro.Enderecos.Select(e => new Endereco
+                //{
+                //    Cep = e.Cep,
+                //    Logradouro = e.Logradouro,
+                //    Numero = e.Numero,
+                //    Complemento = e.Complemento,
+                //    Bairro = e.Bairro,
+                //    Cidade = e.Cidade,
+                //    Estado = e.Estado,
+                //    Pais = e.Pais
+                //}).ToList(),
             };
 
             _context.Usuarios.Add(usuario);

@@ -17,12 +17,12 @@ namespace apiAutenticacao.Models.DTO
             ErrorMessage = "A senha deve ter entre 6 e 100 caracteres")]
         public string Senha { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "A senha é obrigatório")]
-        [Compare("Senha", ErrorMessage = "As senhas não conferem")]
-        public string ConfirmacaoSenha { get; set; } = string.Empty;
+        //[Required(ErrorMessage = "A senha é obrigatório")]
+        //[Compare("Senha", ErrorMessage = "As senhas não conferem")]
+        //public string ConfirmacaoSenha { get; set; } = string.Empty;
 
-        [MinLength(1, ErrorMessage = "Informe pelo menos um endereço")]
-        public List<EnderecoCadastroDTO> Enderecos { get; set; } = new List<EnderecoCadastroDTO>();
+        //[MinLength(1, ErrorMessage = "Informe pelo menos um endereço")]
+        //public List<EnderecoCadastroDTO> Enderecos { get; set; } = new List<EnderecoCadastroDTO>();
 
     }
 }

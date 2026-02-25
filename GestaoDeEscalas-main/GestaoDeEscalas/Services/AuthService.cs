@@ -45,6 +45,28 @@ namespace GestaoDeEscalas.Services
 
         }
 
+        public async Task<ResponseLoginDTO> CadastrarAsync(RequestCadastroDTO dados)
+        {
+            var response = await _httpClient.PostAsJsonAsync($"{BaseUrl}api/Usuarios/cadastrar", dados);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                return new ResponseLoginDTO
+                {
+                    Success = true,
+                    Message = "Cadastro realizado com sucesso"
+                };
+            }
+
+            return new ResponseLoginDTO
+            {
+                Success = false,
+                Message = "Cadastro falhou. Tente novamente."
+            };
+
+        }
+
 
 
     }
