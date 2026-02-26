@@ -25,8 +25,11 @@ namespace GestaoDeEscalas
         {
             await Shell.Current.GoToAsync("///MainPage");
         }
+
+
         async void OnCadastrarClicked(object sender, EventArgs e)
         {
+            DisplayLoadingCadastrar();
             var dados = new RequestCadastroDTO
             {
                 Nome = Nome.Text,
@@ -37,9 +40,23 @@ namespace GestaoDeEscalas
             var resultado = await _authService.CadastrarAsync(dados);
 
             await DisplayAlert("Cadastro", resultado.Message, "OK");
+            DisplayLoadingCadastrar();
 
             if (resultado.Success)
+            {
                 await Shell.Current.GoToAsync("///MainPage");
+                DisplayLoadingCadastrar();
+            }
+
+        }
+
+
+
+        private void DisplayLoadingCadastrar()
+        {
+            btnCadastrar.IsVisible = !btnCadastrar.IsVisible;
+            LoadingCadastro.IsVisible = !LoadingCadastro.IsVisible;
+
         }
 
         //private void OnShowPasswordClicked(object sender, EventArgs e)

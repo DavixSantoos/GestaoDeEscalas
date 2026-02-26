@@ -78,16 +78,35 @@
                             </Grid>
                         </VerticalStackLayout>
 
-                        <Button Grid.Row="3"
-                                Text="Cadastrar"
-                                BackgroundColor="Blue"
-                                TextColor="Black"
-                                HeightRequest="48"
-                                CornerRadius="24"
-                                FontAttributes="Bold"
-                                FontSize="16"
-                                Margin="0,10,0,0"
-                                Clicked="OnCadastrarClicked"/>
+
+                        <Grid Grid.Row="3">
+
+                            <!-- BOTÃO CADASTRAR -->
+                            <Button x:Name="btnCadastrar"
+                            IsVisible="True"
+                            Text="Cadastrar"
+                            BackgroundColor="Blue"
+                            TextColor="Black"
+                            HeightRequest="48"
+                            CornerRadius="24"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Margin="0,10,0,0"       
+                            Clicked="OnCadastrarClicked"/>
+
+                            <!-- LOADING CADASTRAR -->
+                            <ActivityIndicator
+                                x:Name="LoadingCadastro"
+                                IsVisible="False"
+                                IsRunning="True"
+                                Color="#3A8DFF"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+
+                        </Grid>
+
+
+
 
                         <Button Grid.Row="4"
                                 Text="Já tenho conta"

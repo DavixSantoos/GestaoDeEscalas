@@ -68,8 +68,11 @@
                                        FontSize="16"/>
                             </VerticalStackLayout>
 
-                            <!-- botao entrar -->
-                            <Button Grid.Row="2"
+                            <Grid Grid.Row="2">
+                                <!-- botao entrar -->
+                                <Button x:Name="btnEntrara"
+                                    IsVisible="True"
+                                    Grid.Row="2"
                                     Text="Entrar"
                                     BackgroundColor="#3A8DFF"
                                     TextColor="White"
@@ -78,6 +81,17 @@
                                     FontAttributes="Bold"
                                     FontSize="17"
                                     Clicked="OnTelaInicialCliked"/>
+                                <ActivityIndicator
+                                IsRunning="True"
+                                IsVisible="False"
+                                x:Name="Loading"
+                                Color='#3A8DFF'
+                                HeightRequest="40"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                
+                                />
+                            </Grid>
 
                             <Label Grid.Row="3"
                                    Text="ou"
@@ -87,17 +101,18 @@
                                    Margin="0,6"/>
 
                             <!-- botao cadastrar -->
-                            <Button Grid.Row="4"
-                                    Text="Cadastrar"
-                                    BackgroundColor="Transparent"
-                                    BorderColor="#727272"
-                                    BorderWidth="1.5"
-                                    TextColor="White"
-                                    HeightRequest="55"
-                                    CornerRadius="28"
-                                    FontAttributes="Bold"
-                                    FontSize="17"
+                            <Button Grid.Row="4" 
+                                    Text="Cadastrar" 
+                                    BackgroundColor="Transparent" 
+                                    BorderColor="#727272" 
+                                    BorderWidth="1.5" 
+                                    TextColor="White" 
+                                    HeightRequest="55" 
+                                    CornerRadius="28" 
+                                    FontAttributes="Bold" 
+                                    FontSize="17" 
                                     Clicked="OnCadastrarClicked"/>
+
 
                             <!-- página admin -->
                             <Button Grid.Row="5"
